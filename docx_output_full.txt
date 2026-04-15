@@ -1,0 +1,1069 @@
+INTERNCONNECT
+Product Requirements & Design Specification
+Version 1.0  ·  April 2025  ·  Confidential
+Prepared for Antigravity Development Team
+AI-Powered Internship Marketplace Platform
+15 Pages   ·   11 Modules   ·   3 User Roles   ·   50+ Screens
+0. Table of Contents
+1  Executive Summary & Vision
+2  Project Overview
+3  Market Context & Competitive Analysis
+4  User Personas
+5  Information Architecture & Sitemap
+6  Feature Modules — Detailed Specifications
+  6.1  Authentication & Onboarding
+  6.2  Student Profile Builder
+  6.3  Internship Browse & Discovery
+  6.4  Role Detail Page
+  6.5  Multi-Step Application Flow
+  6.6  Student Dashboard
+  6.7  Company Profile (Public)
+  6.8  Company Hiring Dashboard
+  6.9  Messaging & Notifications
+  6.10  Portfolio & Endorsement System
+  6.11  AI Matching Engine
+7  UI & Design System Specification
+8  UX Principles & Interaction Patterns
+9  SEO & Performance Requirements
+10  Technical Architecture
+11  API Reference (Key Endpoints)
+12  Database Schema Overview
+13  Security & Compliance
+14  Release Phases & Roadmap
+15  Acceptance Criteria
+1. Executive Summary & Vision
+🎯 ONE-LINE PITCH:  InternConnect is an AI-powered two-sided marketplace that connects ambitious students with startups, companies, and organisations through intelligent matching, verified portfolios, and flexible micro-internships.
+1.1 The Problem
+The internship market is broken on both sides:
+Students spend weeks sending cold applications into black holes, getting no feedback, no transparency, and no way to stand out beyond a CV.
+Companies — especially startups — cannot afford 6-month full-time internships. They need scoped, flexible talent for specific projects but have no efficient channel to find it.
+Generic job boards (LinkedIn, Internshala) treat internships like junior full-time jobs. There is no differentiation by project type, duration, culture fit, or skill verification.
+1.2 The Solution
+InternConnect solves this through three core innovations:
+AI Matching Engine — Scores compatibility across 40+ signals (skills, availability, work style, culture, project type) rather than keyword search.
+Micro-Internship Format — 2–8 week project-based engagements unlock startups and SMEs as hiring companies, dramatically expanding the supply side.
+Verified Portfolio System — Every completed internship piece is company-endorsed and displayed as proof-of-work, not just a line on a CV.
+1.3 Vision Statement
+🌟 VISION:  To become the definitive internship infrastructure for Asia — the platform where every ambitious student finds their first meaningful work, and every company finds the right talent at the right time.
+1.4 Success Metrics (Year 1)
+Metric
+Target
+Measurement
+Registered Students
+100,000+
+User table count
+Partner Companies
+5,000+
+Verified company accounts
+Successful Placements
+25,000+
+Completed internship status
+AI Match Satisfaction
+≥90%
+Post-placement survey
+Average Time to Hire
+< 7 days
+Application → offer timestamp
+Monthly Active Users
+40,000+
+Session analytics
+NPS Score
+≥50
+In-app survey
+2. Project Overview
+2.1 Platform Type
+InternConnect is a two-sided marketplace web application with a mobile-responsive frontend. It has three distinct user roles, each with their own authenticated experience:
+Role
+Description
+Primary Actions
+Student / Intern
+University students or recent graduates seeking internships
+Build profile, browse roles, apply, track applications, manage portfolio
+Company / Recruiter
+Startups, SMEs, and enterprises seeking intern talent
+Post roles, review AI-ranked candidates, manage pipeline, release payments
+Admin
+InternConnect operations team
+Moderate content, approve verifications, manage disputes, view analytics
+2.2 Platform Scope
+This document covers the following product surfaces:
+Public marketing website (landing page, company page, pricing)
+Student-facing application (profile, browse, apply, dashboard, portfolio, messaging)
+Company-facing application (hiring dashboard, post roles, pipeline, payments)
+Shared utilities (notifications, messaging, search, AI matching)
+Admin panel (user management, content moderation, analytics)
+2.3 Platform Boundaries (Out of Scope — Phase 1)
+Native mobile apps (iOS / Android) — responsive web only in Phase 1
+Video interview tooling (link to Google Meet / Zoom instead)
+Direct payment processing (use Razorpay / Stripe via escrow partner)
+Course creation tools (link to third-party platforms like Coursera)
+3. Market Context & Competitive Analysis
+3.1 Market Opportunity
+India produces 1.5 million engineering graduates and 500,000+ design/business graduates annually. The internship market is estimated at ₹8,000 crore in annual stipend volume. Southeast Asia adds another 2 million graduates seeking entry-level opportunities each year. The total addressable market for an AI-powered placement platform in the India + SEA corridor is estimated at $1.2B USD.
+3.2 Competitive Landscape
+Platform
+Strength
+Weakness
+Our Advantage
+Internshala
+High volume, India market
+No AI, poor UX, no verification
+AI matching + micro format
+LinkedIn
+Network effects, global
+Not intern-specific, noisy
+Purpose-built for interns
+Parker Dewey
+Micro-internship pioneer
+US only, no Indian market
+India/SEA focus + AI
+WayUp
+Student-focused
+Limited company diversity
+Micro format + portfolio
+AngelList
+Startup hiring
+Experience required
+Entry-level + verified
+3.3 Differentiation Summary
+🏆 UNIQUE BUNDLE:  No competitor combines all four of: (1) AI fit-scoring beyond keywords, (2) micro-internship format for SMEs/startups, (3) company-verified portfolio proofs, (4) two-sided accountability through mutual ratings — in one product.
+4. User Personas
+4.1 Aryan — The Ambitious Student
+AR
+Age 21  ·  B.Tech CSE, IIT Bombay  ·  Graduating 2025Aryan is a final-year student with strong Figma and React skills. He has a side project portfolio but no professional experience. He applies to 20–30 internships but hears back from maybe 3. He is frustrated by the "black hole" of applications and has no way to prove his skill level beyond a GitHub link that most recruiters never open.Goals: Land a design or frontend role at a product startup. Build a portfolio piece from real work. Network into a full-time offer.Frustrations: Ghosting, no match transparency, can't differentiate himself from 1000 applicants.
+4.2 Sarah — The Startup CTO
+SK
+Age 34  ·  CTO, Draftly (YC W23)  ·  12-person teamSarah's startup cannot afford a 6-month full-time intern commitment — headcount is frozen. But she desperately needs someone to own the onboarding redesign for 4–6 weeks. She has no time to post on 3 job boards and manually screen 200 CVs.Goals: Find a design intern for a specific scoped project. See pre-screened, ranked candidates. Pay via escrow so there's accountability on both sides.Frustrations: Job boards require full-time commitments. No pre-screening. No accountability on deliverables.
+4.3 Priya — The NGO Programme Manager
+PR
+Age 29  ·  Programme Manager, Teach For India  ·  Non-profitPriya runs a fellowship programme that needs content, data, and design help year-round. She has a small budget and cannot compete with corporate stipends. She needs to tell a compelling story about impact and mission to attract the right candidates — students who value experience over money.Goals: Find mission-aligned interns. Run 3–4 project-based engagements per year. Low administrative overhead.Frustrations: Competing with corporates on stipend. Complex hiring processes not built for NGOs.
+5. Information Architecture & Sitemap
+5.1 Public Pages
+/ — Landing page (hero, features, testimonials, pricing)
+/browse — Internship listing with filters and search
+/role/[slug] — Individual role detail page
+/company/[slug] — Public company profile page
+/companies — For Companies marketing page + contact form
+/pricing — Standalone pricing page
+/blog — SEO content hub (Phase 2)
+/sitemap.xml — XML sitemap
+/robots.txt — Crawl directives
+5.2 Student-Authenticated Pages
+/onboarding — Profile builder wizard (6 steps)
+/dashboard — Main student hub
+/applications — All applications + status
+/saved — Saved roles
+/profile — Public profile preview + edit
+/portfolio — Portfolio management + endorsements
+/apply/[roleId] — Multi-step application flow (4 steps)
+/messages — Messaging inbox
+/notifications — Notification centre
+/settings — Account + notification preferences
+5.3 Company-Authenticated Pages
+/company/dashboard — Overview + stats
+/company/post-role — New role creation
+/company/roles — Role management
+/company/applicants — Applicant list + filters
+/company/pipeline — Kanban hiring pipeline
+/company/interns — Active intern management
+/company/payments — Escrow + payment history
+/company/reviews — Intern reviews + ratings
+/company/settings — Company profile + billing
+5.4 Admin Pages
+/admin — Dashboard with KPIs
+/admin/users — User management
+/admin/companies — Company approvals
+/admin/roles — Role content moderation
+/admin/disputes — Dispute resolution queue
+/admin/analytics — Platform analytics
+6. Feature Modules — Detailed Specifications
+6.1 Authentication & Onboarding
+Single entry point for both user types. Role is selected on the signup screen and cannot be changed.
+Screens
+Login — Email + password. Social login via Google OAuth and GitHub OAuth.
+Signup — Role toggle (Student / Company). Dynamic form fields based on role selection.
+Email verification — OTP sent on registration. Must verify before accessing dashboard.
+Forgot password — Email-based reset with time-limited token (15 minutes).
+Profile completion prompt — Banner in dashboard until profile reaches 80% completion.
+Functional Requirements
+JWT-based authentication with refresh tokens (7-day expiry).
+Google OAuth 2.0 and GitHub OAuth integration. Auto-populate name + email from OAuth.
+Role selection cannot be changed post-registration. Separate accounts required for dual roles.
+Rate limiting: max 5 failed login attempts before 15-minute lockout.
+Session timeout after 30 minutes of inactivity. Silent refresh for active sessions.
+On first login after signup, redirect student to profile builder wizard.
+On first login, redirect company to role creation flow.
+6.2 Student Profile Builder (6-Step Wizard)
+The profile builder is the critical first-run experience. Completion rate directly impacts match quality. The wizard must feel fast, modern, and rewarding — not like filling out a government form.
+Step Structure
+Step
+Title
+Key Fields
+Completion Signal
+1
+About You
+Photo, name, headline (100 chars), bio (400 chars), location, socials (LinkedIn, GitHub, Behance)
+All required fields filled
+2
+Education
+Institution, degree, field, year range, CGPA, coursework. Certifications sub-section.
+At least 1 institution added
+3
+Skills
+Quick-add from curated chip list. Custom skill input. Proficiency levels (Beginner/Intermediate/Advanced/Expert). Soft skills multi-select.
+3+ skills added
+4
+Projects
+Title, description (300 chars), link, type, skills used, cover image/PDF upload. Max 4 projects.
+1+ project added
+5
+Availability
+Duration preference (Micro/Short/Full checkboxes). Weekly hours slider (5–60). Start date options. Work mode. Timezone. Relocation preference.
+Duration + hours set
+6
+Preferences
+Domain checkboxes (8 options). Company type. Stipend expectation slider. Primary goal radio. Privacy toggles.
+At least 1 domain selected
+UX Requirements
+Progress ring in left rail showing real-time completion percentage.
+Step dots in bottom nav bar — past steps are clickable for editing.
+AI Bio Generator: single button generates a professional bio from entered fields.
+Profile strength labels: "Just getting started" → "Building momentum" → "Strong profile" → "Complete!" 
+Wizard is resumable — if user abandons, data is saved and wizard resumes from last step on next login.
+All steps have "Back" and "Continue" navigation. Step 6 shows "Finish Profile" CTA.
+Completion screen shows match count estimate, profile score, and next-step checklist.
+6.3 Internship Browse & Discovery
+Layout
+Two-column layout: sticky filter sidebar (260px) on left, job card grid on right. Full-width search bar at top of page with role/keyword input and location input.
+Filter Options
+Internship Type: Micro (2–8 wks), Short-term (2–3 mo), Full-term (4–6 mo)
+Work Mode: Remote, Hybrid, On-site
+Domain: Design, Engineering, Marketing, Product, Data & AI, Finance, Operations, Content
+Stipend: Paid only / Include unpaid
+Match Score: 90%+ match / 75%+ match
+Posted Date: Last 24 hrs / Last 7 days / Last 30 days
+Company Size: 1–10 / 11–50 / 51–200 / 200+
+Job Card
+Each card displays: company logo/initials, role title, company name + location, tags (remote/micro/paid + skills), AI match score badge, stipend, duration, Apply button, Save button.
+"Featured" badge for sponsored/promoted listings. Card click opens role detail page.
+Search Behaviour
+Full-text search across role title, company name, skill tags, and description.
+Debounced 250ms — no search button required, results update on type.
+URL query params updated on each filter change — shareable/bookmarkable search state.
+Empty state shows relevant suggestions when no results match.
+Save role button persists to user's saved list without navigating away.
+Sort options: Best Match (default), Newest, Stipend High-Low, Duration Short-First.
+"Load More" pagination (no infinite scroll — reduces cognitive overload).
+6.4 Role Detail Page
+Sections
+Role Header — Company logo, title, meta strip (location/posted date), tag row (remote/micro/paid)
+Details Strip — Duration, stipend, start date, team size, internship type (horizontal strip)
+AI Match Banner — Circular score ring, 4 signal breakdown bars (skills, tools, collaboration, availability)
+About the Role — Free-text description
+What You'll Work On — Deliverables grid (4 cards with icon + description)
+Requirements — Two-column: Must Have (green check icons) and Nice to Have (blue plus icons)
+Skills Cloud — Colour-differentiated: primary skills vs. secondary skills
+Perks & Benefits — Icon + text grid (6 items)
+About the Company — Company profile card with logo, description, tags, intern rating
+Intern Reviews (from company profile) — Preview of top 2 reviews
+Similar Roles — 3 recommended roles with match scores
+Sticky Sidebar
+Stipend amount (large, prominent) + duration
+Application deadline with countdown ("18 days left")
+Applicant count + avatar stack ("247 applied")
+Apply Now CTA (primary, full width)
+Save Role button (secondary)
+Quick facts: AI score, verified company, escrow-protected, response time
+Share buttons: LinkedIn, Twitter, Copy Link
+Recruiter card with photo, name, role, and Message button
+Mobile
+On mobile (<1024px), sidebar collapses. Sticky bottom bar appears with role name + salary + "Apply Now" button. Bar hides when original CTA is visible on screen.
+6.5 Multi-Step Application Flow (4 Steps)
+Split-panel layout: role info panel pinned on left throughout all steps, form on right.
+Step 1 — Basic Info
+Pre-filled from profile: name, email, university, graduation year
+Start date radio cards (preferred date, +1 week, custom)
+Availability slider (5–60 hrs/week) with real-time label ("Full-time", "Part-time")
+Phone number (optional) with country code prefix
+Step 2 — Portfolio
+Portfolio URL field with type detection (Behance / Dribbble / personal)
+Drag-and-drop file upload zone (PDF, PNG, JPG, ZIP, Figma — max 20MB each)
+Case study links: URL + one-line description (add up to 5)
+GitHub / Behance / Dribbble social links
+Step 3 — Cover Letter
+AI Draft Generator — single click generates personalised draft from profile + role data
+"Why this role?" textarea (600 char limit with counter)
+"Relevant experience" textarea (600 char limit)
+Optional: "Anything else" textarea
+Screening Questions section — company-defined questions (2–5 yes/no or short-answer)
+Step 4 — Review & Submit
+Summary of all 3 prior steps with per-section Edit buttons
+Pre-submission checklist (3 mandatory checkboxes: accuracy, commitment, ToS)
+Submit button — disabled until all checkboxes checked
+Success screen: animated icon, confirmation, "what happens next" timeline
+Validation Rules
+Step 1: First/last name and email required. Email must be valid format.
+Step 3: Both textarea fields required before advancing to step 4.
+Step 4: All 3 checkboxes must be checked before submit button activates.
+Inline validation on blur — red border + helper text beneath field.
+Application data auto-saved to localStorage on each step advance.
+6.6 Student Dashboard
+The primary hub for student activity post-login.
+Components
+Profile completion banner (shows until 80% — with specific missing items listed)
+Stats row: AI Matches / Applications / Profile Views / Match Score
+My Applications widget — recent 3 applications with status badges
+Top AI Matches widget — top 3 new matches with scores and apply buttons
+Learning Paths widget — course progress bars for enrolled paths
+Mentor widget — current mentor info + "Join Session" button
+Quick links to Browse, Portfolio, Messages
+Application Status System
+Status
+Colour
+Trigger
+Applied
+Indigo
+Application submitted
+Under Review
+Amber
+Company opened application
+Shortlisted
+Green
+Company moved to shortlist stage
+Interview
+Blue
+Interview scheduled in system
+Offer
+Green Bold
+Company sent offer
+Rejected
+Red
+Company rejected or role closed
+Withdrawn
+Grey
+Student withdrew application
+6.7 Company Profile Page (Public-Facing)
+SEO-indexed public page. URL: /company/[slug]. Visible to all users including unauthenticated.
+Sections
+Cover — Company logo (88px), name, verified badge, tagline, hero actions (Follow, View Roles)
+Meta strip — Location, employee count, founded year, website, funding stage
+Tag row — Industry tags, remote-friendly badge, "Actively Hiring" animated badge
+Stats bar — Intern rating, past intern count, open roles, return offer rate, avg response, avg stipend
+About — Expandable company description (collapsed after 200 words)
+Culture & Values — 4 culture cards with icon + title + 1-sentence description
+Culture photos — 3 placeholder cards with labels (Phase 2: actual photo upload)
+What Interns Get — Perks list with icons (stipend, equipment, mentor, portfolio, conversion rate)
+Open Roles — Cards for each active posting with match score
+Intern Reviews — Rating breakdown bars + 3 review cards with endorsement tags
+Alumni — Grid of past interns with initials, name, and where they went after
+Sidebar
+Quick Apply card — compact listing of open roles with match scores + View All button
+Save Company / Follow button
+Company fact sheet
+Similar companies hiring
+6.8 Company Hiring Dashboard
+Authenticated area for company users. Left sidebar with 8 navigation items, each loading a panel.
+Dashboard Overview Panel
+6 stat cards: Total Applicants, Shortlisted, Avg AI Match, Time to Hire, Active Interns, Open Roles
+Top AI Matches table — ranked applicant list with shortlist/reject/view-profile quick actions
+Hiring Funnel chart — horizontal bar chart: Applications → AI Screened → Reviewed → Shortlisted → Interview → Offer
+Open Roles list — active/draft status, applicant counts, closing dates
+Escrow & Payments widget — in-escrow balance, next release, total paid. Per-intern milestone progress + "Release" button.
+Active Interns strip — sprint progress, deliverable checklist, action buttons
+Post Role Panel
+Form: title, type, work mode, duration, start date, stipend, description (with AI JD generator), skills input (tag-style with Enter key), positions count, deadline, screening questions
+Live Preview card — updates as the form is filled, showing exactly how it will appear to candidates
+Save as Draft and Publish buttons. Draft can be previewed before publishing.
+Applicants Panel
+Table: avatar, name/university, match score, role, applied date, status badge, shortlist/view/reject actions
+Filter tabs: All / New / Shortlisted / Interview / Rejected with counts
+Search by name. Sort by match score / date / name.
+Bulk select with bulk actions (shortlist all, reject all, export CSV)
+Pipeline (Kanban) Panel
+5 columns: Applied → AI Screened → Shortlisted → Interviewing → Offer
+Drag-and-drop cards between columns. Column counts auto-update.
+Card: applicant name, university, AI score. Click to open applicant profile sheet.
+Active Interns Panel
+Per-intern card: sprint week indicator, deliverable checklist (done/in-progress/pending), message/view-work/leave-review actions
+Milestone progress bar with payment release tied to milestone completion
+6.9 Messaging & Notifications
+Messaging System
+Chat-style inbox. Accessible from dashboard sidebar. Split-panel: conversation list (left) + active thread (right).
+Conversation list: avatar, name, company, preview of last message, unread count, timestamp
+Message thread: bubble-style, sent (indigo, right-aligned) vs received (card, left-aligned)
+Role context banner above thread — links to the role the conversation is about
+Compose area: multi-line textarea (auto-resize), toolbar (attach/emoji/portfolio link), Enter to send
+System messages for scheduled interviews, offer letters, milestones (full-width, centered)
+Typing indicator (3-dot animation) when other party is typing
+File attachment: PDF, images up to 5MB. Inline preview for images.
+Message search within a conversation.
+Notification System
+In-app notification centre accessible via bell icon. Email notifications for key events.
+Event
+In-App
+Email
+Icon Colour
+New AI match (80%+ score)
+Yes
+Daily digest
+Indigo
+Application under review
+Yes
+Immediate
+Amber
+Application shortlisted
+Yes
+Immediate
+Green
+Interview scheduled
+Yes
+Immediate
+Amber
+New message received
+Yes
+Immediate
+Red
+Stipend payment released
+Yes
+Immediate
+Cyan
+Portfolio endorsed by company
+Yes
+Weekly digest
+Purple
+Profile viewed by recruiter
+Yes
+Weekly digest
+Blue
+Notification preferences are configurable per-channel in Settings. "Mark all as read" batch action. Filter tabs: All / Matches / Applications / Interviews / Reviews / Payments.
+6.10 Portfolio & Endorsement System
+The verified portfolio is InternConnect's strongest differentiator. Every piece of work completed through the platform can be company-endorsed. This section describes both self-uploaded and verified pieces.
+Self-Uploaded Projects
+Add via three methods: (1) file upload, (2) external link, (3) Figma share URL
+Each project: title, description, type, year, skills demonstrated, cover image
+Featured toggle — pins project to top of portfolio grid
+Portfolio strength score (0–100) updates as projects are added
+Public portfolio URL: internconnect.io/u/[username] (indexable by search engines)
+Verified Internship Work
+Created automatically when a company marks a deliverable as complete
+Company endorses the piece, which adds a "Verified by [Company]" badge
+Verified pieces show: company logo, intern's role, date, deliverable description, skills demonstrated
+Visibility: always public on portfolio and shown prominently in applications
+Recruiters cannot remove or edit verified pieces (integrity guarantee)
+Skill Endorsements
+Companies endorse specific skills after project completion (e.g. "Figma — Endorsed by Stripe")
+Endorsement level: 1–5 dots (set by company based on demonstrated proficiency)
+Endorsements appear in the Skills section of public profile with company logo
+Students can request endorsements from companies they've worked with (limit: 1 request/company)
+Portfolio Analytics
+View count per piece (from recruiters + other visitors)
+Total portfolio views (weekly trend in dashboard)
+Which companies viewed which projects (when viewing from company login)
+6.11 AI Matching Engine
+⚠️ NOTE:  This section describes the product-level specification. The actual ML model architecture is a separate technical document. This covers what the engine does, not how it is built.
+What It Matches
+For each student–role pair, the engine produces a compatibility score from 0–100%. This score is shown to both the student (as their match percentage) and the company (as the candidate ranking).
+Input Signals (40+)
+Category
+Signals
+Skills
+Technical skill overlap, proficiency level match, tool-specific experience
+Availability
+Duration preference match, hours/week overlap, start date alignment
+Domain
+Field-of-study alignment, project domain history, expressed domain preference
+Work Style
+Remote/hybrid/on-site preference, communication style indicators
+Culture
+Company size preference vs actual company size, mission alignment signals
+Past Activity
+Portfolio project types, previous internship domains, saved company types
+Application Quality
+Profile completion %, portfolio strength score, endorsement count
+Match Score Display Rules
+90–100%: "Excellent Match" — green badge, shown first in feed
+75–89%: "Good Match" — blue badge
+60–74%: "Fair Match" — amber badge
+Below 60%: No badge shown. Role still appears in search if filters match.
+Companies see ranked candidate list sorted by score (highest first by default).
+7. UI & Design System Specification
+🎨 PHILOSOPHY:  The UI must feel like it was designed by a human who cares about craft — not generated. No purple-gradient-on-white AI aesthetics. The design is dark, precise, and editorial. Every spacing decision is intentional. Typography is characterful. Motion is purposeful.
+7.1 Visual Language
+InternConnect uses a dark-first design system. The background is deep navy-black (#080C14), not pure black. Cards sit at #111827 (slightly lighter). This creates a depth hierarchy without harsh contrast.
+7.2 Colour Palette
+Token
+Hex
+Usage
+--bg-primary
+#080C14
+Page background
+--bg-secondary
+#0D1120
+Sidebar, page sections, nav
+--bg-card
+#111827
+Cards, widgets, form containers
+--accent
+#6366F1
+Primary CTA, active states, focus rings
+--accent-light
+#818CF8
+Links, secondary accents, icons
+--accent-2
+#06B6D4
+Secondary accent, charts, highlights
+--accent-3
+#10B981
+Success states, match scores, progress
+--text-primary
+#F1F5F9
+Headings, labels, important text
+--text-secondary
+#94A3B8
+Body text, descriptions, subtitles
+--text-muted
+#475569
+Placeholders, helper text, disabled
+--border
+rgba(255,255,255,0.07)
+Default card borders
+--border-hover
+rgba(255,255,255,0.12)
+Hovered card borders
+Amber
+#F59E0B
+Warnings, deadlines, "closing soon"
+Red
+#EF4444
+Errors, rejected states, delete actions
+7.3 Typography
+Two fonts only. No fallback to system fonts for display text.
+Font
+Role
+Weights
+Usage
+Syne
+Display
+600, 700, 800
+All headings (H1–H4), logo, numbers, stat values
+DM Sans
+Body
+300, 400, 500
+All body text, labels, buttons, form inputs, navigation
+Type scale: H1 clamp(2.5rem, 6vw, 5rem) · H2 clamp(2rem, 4vw, 3.2rem) · H3 1.35rem · Body 1rem · Small 0.875rem · XSmall 0.78rem.
+❌ NEVER USE:  Inter, Roboto, Arial, system-ui, or any generic sans-serif for display text. These fonts signal AI-generated design. Syne is the only approved display font.
+7.4 Spacing System
+8px base unit. All spacing values are multiples of 4px or 8px. Padding inside cards: 24–28px. Gap between cards: 16–20px. Section padding: 80–100px vertical. Container max-width: 1160px with 24px horizontal padding.
+7.5 Border Radius
+--radius-sm: 8px  — buttons, tags, small chips, form inputs
+--radius-md: 12px — medium components, dropdowns
+--radius-lg: 16px — cards, modals, panels
+--radius-xl: 24px — large cards, feature sections, sidebars
+7.6 Elevation & Shadow
+Avoid box-shadows for general use. Use border + background-colour difference for depth. Reserve box-shadows for: floating cards, modals, dropdowns, tooltips. No drop-shadows on text. No text-shadow effects.
+--shadow-sm: 0 1px 3px rgba(0,0,0,0.3)  — subtle lift
+--shadow-md: 0 4px 24px rgba(0,0,0,0.4)  — hovered cards, modals
+--shadow-glow: 0 0 40px rgba(99,102,241,0.15)  — accent glow on primary CTAs
+7.7 Component Specifications
+Buttons
+Variant
+Background
+Border
+Usage
+Primary
+var(--accent)
+1px rgba(255,255,255,0.1)
+Main CTAs: "Apply Now", "Post Role", "Get Started"
+Secondary
+rgba(255,255,255,0.06)
+1px var(--border-hover)
+Alternate actions: "Save", "Follow"
+Ghost
+transparent
+none
+Nav links, text buttons: "Sign in", "Back"
+Outline
+transparent
+1px var(--border-hover)
+Less prominent actions: "Load More", "View All"
+Danger
+rgba(239,68,68,0.1)
+1px rgba(239,68,68,0.3)
+Destructive: "Delete", "Reject"
+Button height: 40px standard, 36px compact, 48px hero. Border-radius: var(--radius-md). Font: DM Sans 600. Hover: translateY(-1px) + box-shadow. Active: translateY(0) + scale(0.99). Disabled: opacity 0.4, cursor: not-allowed.
+Form Inputs
+Background: rgba(255,255,255,0.04). Border: 1px var(--border-hover). Height: 44px standard. Padding: 0 14px. Font: DM Sans 400 0.9rem. Focus: border-color var(--accent), no box-shadow ring (box-shadow conflicts with dark backgrounds). Error: border-color #EF4444, helper text in red below input. Textarea: min-height 100px, resize: vertical only.
+Tags & Badges
+Tags: pill shape, 24px height, font-size 0.75rem, font-weight 600. Match score badge: green bg + border, Lucide Zap icon + number%. Status badges: colour-coded with background + matching border (never solid-fill, always translucent).
+Cards
+Background: var(--bg-card). Border: 1px var(--border). Border-radius: var(--radius-xl). Hover: border-color var(--border-hover), translateY(-2px to -4px). Featured/highlighted card: border-color with accent at 35–40% opacity. Bento cards: CSS custom properties --x and --y set on mousemove for spotlight effect.
+7.8 Icons
+Icon library: Lucide Icons (lucide.dev) — loaded via CDN (unpkg.com/lucide). Never use emoji as UI icons. Never use Font Awesome or Material Icons. Icon sizes: 14px (inline text), 16px (buttons/labels), 18–20px (feature icons), 24px (hero icons). Icon colour should match surrounding text colour or use semantic colour (green for success, amber for warning).
+7.9 Motion & Animation
+Page transitions: AOS library, duration 700ms, ease-out-cubic, once: true
+Hover transitions: 200ms ease (fast, responsive)
+Panel/modal transitions: 350ms cubic-bezier(0.4, 0, 0.2, 1)
+Scroll-triggered elements: fade-up with 60px offset
+Hero orbs: slow float animation (8s, ease-in-out, infinite)
+Progress bars: animated fill from 0% on first intersection (IntersectionObserver)
+Counter animation: 1.8s eased counting from 0 to target value
+Success screens: scale + rotate pop animation (cubic-bezier(0.34, 1.56, 0.64, 1))
+RULE:  All animations must respect prefers-reduced-motion: no-preference. Wrap keyframe animations in @media (prefers-reduced-motion: no-preference).
+8. UX Principles & Interaction Patterns
+8.1 Core UX Principles
+Principle 1: Zero Dead Ends
+Every empty state, error state, and dead end must have a clear next action. Empty search results show suggested roles. Empty application list shows "Browse Roles" CTA. A 404 page explains what happened and links back to homepage.
+Principle 2: Progressive Disclosure
+Never overwhelm users with all information at once. Company profiles use "Read More" expand. Role requirements use "Must Have" (visible) + "Nice to Have" (below fold). Advanced filters are collapsed by default on mobile. Forms show one logical group at a time in wizard flows.
+Principle 3: Optimistic UI
+UI state updates immediately on user action. Network call happens in background. If the call fails, revert the state and show an inline error — not a page reload. Save role: bookmark icon fills immediately. Shortlist: row turns green immediately.
+Principle 4: Contextual Help
+Every form field with a non-obvious purpose has a helper text or tooltip. No reliance on placeholder text as labels — labels and placeholders are always separate. Character counters on all text inputs with limits (appear at 80% of max, turn amber at 90%).
+Principle 5: Mobile-First Decision Making
+All layout decisions start from mobile. Desktop gets more space, not more features. Touch targets minimum 44×44px. No hover-only interactions for key features. Bottom navigation for key student actions on mobile.
+8.2 Navigation Patterns
+Desktop: top navigation bar (fixed, blurs on scroll with backdrop-filter). Scrolled state adds darker background and bottom border.
+Mobile: hamburger menu opens a slide-down panel with all nav links.
+Dashboard: left sidebar with section groupings. On mobile, sidebar collapses to icon-only or hidden with bottom nav.
+Breadcrumbs on role detail and company profile pages for wayfinding.
+Back navigation: always a visible "Back" link/button, never rely on browser back.
+Active nav item: indigo left border + translucent background (sidebar) or underline (top nav).
+8.3 Form UX Standards
+Label always above input (never floating labels — they obscure input state).
+Required fields marked with a subtle asterisk (*) in the label.
+Validation: on blur for individual fields, on submit for form-level errors.
+Error messages: specific and actionable. Not "Invalid input" — say "Email must include @".
+Success: green border briefly on valid input, then remove to avoid visual noise.
+Multi-step forms: show step number, total steps, and allow back navigation.
+Auto-save: all multi-step form data saved to localStorage on each step advance.
+Keyboard navigation: all interactive elements reachable by Tab. Focus rings visible.
+8.4 Loading & Skeleton States
+Skeleton screens (not spinners) for cards, tables, and lists.
+Skeleton matches the approximate shape and size of the content it replaces.
+Spinners only for in-place actions: button loading state, file upload progress.
+Page-level data loads in sections — above-the-fold content loads first.
+Minimum skeleton display time: 300ms (prevents flash for fast connections).
+8.5 Accessibility Standards
+WCAG 2.1 Level AA compliance target.
+All images have descriptive alt text. Icons used alone have aria-label.
+Colour contrast ratio: minimum 4.5:1 for body text, 3:1 for large text and UI components.
+Focus indicators: visible on all interactive elements (3px indigo ring offset 2px).
+Form inputs have associated labels (not just placeholder). Errors linked via aria-describedby.
+Modal: focus trapped inside while open. Escape key closes. aria-modal and role="dialog" set.
+Toast notifications: role="status" aria-live="polite".
+Tab order: logical left-to-right, top-to-bottom. No positive tabindex values.
+9. SEO & Performance Requirements
+9.1 SEO Technical Requirements
+Meta Tags (Required on every indexable page)
+title tag: max 60 characters, includes primary keyword
+meta description: 120–160 characters, includes CTA
+canonical URL: always set, no trailing slashes
+Open Graph: og:title, og:description, og:image (1200×630), og:url, og:type
+Twitter Card: twitter:card=summary_large_image, twitter:title, twitter:description
+robots: index,follow for all public pages. noindex for all authenticated pages.
+Structured Data (JSON-LD)
+Homepage: WebSite schema with SearchAction potentialAction
+Role pages: JobPosting schema (title, company, location, salary, description, datePosted, validThrough)
+Company pages: Organization schema (name, url, description, logo, numberOfEmployees)
+Blog posts (Phase 2): Article schema
+Technical SEO
+sitemap.xml — auto-generated, updated on new role/company creation. Submitted to Google Search Console.
+robots.txt — allows all public pages, disallows /dashboard, /apply, /company/dashboard, /admin
+URL structure: human-readable slugs (company name, role title). No ID-only URLs on public pages.
+Pagination: rel="next" and rel="prev" on browse pages. Canonical on page 1.
+Internal linking: role cards link to role detail. Company mentions link to company profile.
+Image alt text: all decorative images use empty alt="". All content images use descriptive alt.
+9.2 Core Web Vitals Targets
+Metric
+Target
+Measurement Tool
+Largest Contentful Paint (LCP)
+< 2.5s
+Google PageSpeed Insights
+Cumulative Layout Shift (CLS)
+< 0.1
+Chrome DevTools
+Interaction to Next Paint (INP)
+< 200ms
+Chrome User Experience Report
+First Contentful Paint (FCP)
+< 1.8s
+Lighthouse
+Time to First Byte (TTFB)
+< 600ms
+WebPageTest
+Total Page Size (homepage)
+< 1MB
+Network tab
+9.3 Performance Optimisation
+Fonts: preconnect to fonts.googleapis.com. Load only required weights and subsets.
+Images: WebP format with fallback. Lazy-load all below-fold images (loading="lazy").
+CSS: critical CSS inlined. Non-critical CSS loaded asynchronously.
+JavaScript: code-split by route. Vendor bundles separate from app bundles.
+Icons: Lucide loaded from CDN with UMD bundle. Only lucide.createIcons() called once per page.
+Third-party scripts (AOS): loaded asynchronously, non-blocking.
+API responses: ETag caching headers. Browse page results cached for 60 seconds at CDN edge.
+Redis caching for AI match scores (recalculated on profile update, cached otherwise).
+10. Technical Architecture
+10.1 Technology Stack (Recommended)
+Layer
+Technology
+Justification
+Frontend
+Next.js 14 (App Router)
+SSR for SEO, RSC for performance, file-based routing
+Styling
+Tailwind CSS + CSS Variables
+Utility-first + design token system
+State
+Zustand + React Query
+Lightweight global state + server state management
+Backend
+Node.js + Express / Fastify
+Fast JSON APIs, proven for marketplaces
+Database
+PostgreSQL (primary)
+Relational data for users, roles, applications
+Cache
+Redis
+Sessions, rate limiting, AI score cache, match queue
+Search
+Elasticsearch / Meilisearch
+Full-text search across roles, companies, skills
+File Storage
+AWS S3 / Cloudflare R2
+Portfolio uploads, profile photos, documents
+Auth
+NextAuth.js + JWT
+OAuth (Google/GitHub) + email/password
+Payments
+Razorpay (INR) + Stripe (USD)
+Escrow integration for stipend management
+Email
+Resend / SendGrid
+Transactional emails (verify, notify, digest)
+AI Matching
+Python + FastAPI + scikit-learn
+Separate ML service. See AI spec doc.
+CDN
+Cloudflare
+Edge caching, DDoS protection, image optimisation
+Hosting
+Vercel (frontend) + Railway/Render (API)
+Zero-config deploy + managed infra
+Monitoring
+Sentry (errors) + PostHog (analytics)
+Error tracking + product analytics
+10.2 System Architecture Overview
+Three-tier architecture: Client (Next.js SSR/CSR) → API Gateway (Node.js) → Data Layer (PostgreSQL + Redis + S3).
+The AI Matching Engine runs as a separate Python microservice called asynchronously. Match scores are pre-computed and cached in Redis. Recalculated on profile update or new role posting.
+WebSocket connection for real-time messaging (Socket.io or Ably). All other communication via REST API with JWT authentication.
+10.3 Environments
+Development: Local with Docker Compose (PostgreSQL + Redis + Meilisearch)
+Staging: Full production mirror on separate subdomain (staging.internconnect.io)
+Production: Auto-deployed from main branch via CI/CD pipeline
+Feature branches: PR preview environments via Vercel
+11. API Reference (Key Endpoints)
+Base URL: https://api.internconnect.io/v1. All endpoints require Authorization: Bearer {token} except public endpoints marked (PUBLIC).
+11.1 Authentication
+Method
+Endpoint
+Description
+POST
+/auth/signup
+Create account. Body: {email, password, role, firstName, lastName}
+POST
+/auth/login
+Login. Body: {email, password}. Returns: {accessToken, refreshToken}
+POST
+/auth/refresh
+Refresh access token. Body: {refreshToken}
+POST
+/auth/logout
+Invalidate tokens
+GET
+/auth/me
+Get current user profile
+POST
+/auth/oauth/google
+Google OAuth callback handler
+POST
+/auth/forgot-password
+Send reset email
+POST
+/auth/reset-password
+Reset with token. Body: {token, newPassword}
+11.2 Roles (PUBLIC + Authenticated)
+Method
+Endpoint
+Description
+GET
+/roles (PUBLIC)
+List roles. Query: q, domain, type, mode, stipend_min, sort, page
+GET
+/roles/:id (PUBLIC)
+Role detail. Includes company info and AI match score if authenticated
+POST
+/roles
+Create role (company auth required)
+PUT
+/roles/:id
+Update role (role owner only)
+DELETE
+/roles/:id
+Delete/archive role
+GET
+/roles/:id/applicants
+List applicants for a role (company auth)
+POST
+/roles/:id/save
+Save role to user's list
+DELETE
+/roles/:id/save
+Remove saved role
+11.3 Applications
+Method
+Endpoint
+Description
+POST
+/applications
+Submit application. Body: multipart/form-data with files + JSON fields
+GET
+/applications
+List user's applications (student: own, company: for their roles)
+GET
+/applications/:id
+Application detail
+PATCH
+/applications/:id/status
+Update status (company auth). Body: {status, note}
+DELETE
+/applications/:id
+Withdraw application (student, before review stage only)
+11.4 Users & Profiles
+Method
+Endpoint
+Description
+GET
+/users/:username (PUBLIC)
+Public profile. Returns skills, portfolio, education, verified pieces
+PUT
+/users/profile
+Update profile. Accepts multipart for photo upload
+GET
+/users/matches
+Get AI match recommendations for current student
+GET
+/companies/:slug (PUBLIC)
+Company public profile
+PUT
+/companies/profile
+Update company profile (company auth)
+12. Database Schema Overview
+Key tables only. Full ERD available as a separate Figma/dbdiagram.io file.
+12.1 Core Tables
+Table
+Key Fields
+Relationships
+users
+id, email, password_hash, role (student|company|admin), created_at, last_login
+1:1 with student_profiles, company_profiles
+student_profiles
+user_id, first_name, last_name, headline, bio, avatar_url, location, completion_pct
+1:N with skills, education, projects
+company_profiles
+user_id, company_name, slug, description, size, industry, verified, logo_url
+1:N with roles, reviews
+roles
+id, company_id, title, slug, type (micro|short|full), mode, duration, stipend, status (draft|active|closed), posted_at, closes_at
+N:1 company, N:M skills
+applications
+id, student_id, role_id, status, cover_why, cover_exp, portfolio_url, submitted_at, reviewed_at
+N:1 student, N:1 role
+skills
+id, name, category, canonical (bool)
+N:M users via user_skills
+user_skills
+user_id, skill_id, proficiency (1-4), is_soft
+Junction: users ↔ skills
+portfolio_items
+id, user_id, title, description, type, link, is_verified, verified_by_company_id, cover_url
+N:1 user
+endorsements
+id, from_company_id, to_user_id, skill_id, level (1-5), internship_id
+Links company → student skill
+messages
+id, conversation_id, sender_id, content, type (text|system|file), created_at, read_at
+N:1 conversation
+conversations
+id, student_id, company_id, role_id, last_message_at
+1:N messages
+notifications
+id, user_id, type, title, body, read, action_url, created_at
+N:1 user
+reviews
+id, reviewer_id, reviewee_id, role, internship_id, rating (1-5), body, is_public
+Bidirectional: student↔company
+match_scores
+student_id, role_id, score (0-100), signals_json, computed_at
+Cached from AI service
+payments
+id, internship_id, amount, currency, status, escrow_released_at, razorpay_payment_id
+N:1 internship (application)
+13. Security & Compliance
+13.1 Authentication & Authorisation
+All API routes require authentication except explicitly marked PUBLIC endpoints.
+Role-based access control (RBAC): student, company, admin. Middleware validates role on each route.
+Resource ownership: students can only modify their own data. Companies can only modify their own roles/company profile.
+JWT access tokens: 15-minute expiry. Refresh tokens: 7-day expiry, stored in httpOnly cookie.
+OAuth tokens: never stored server-side. Exchange for internal JWT immediately.
+13.2 Data Protection
+HTTPS enforced everywhere. HSTS header set. No HTTP → HTTPS redirect (HSTS-only).
+Passwords: bcrypt with cost factor 12. Never stored in plain text or reversible encryption.
+PII data (email, phone): encrypted at rest in database using field-level encryption.
+File uploads: validated server-side for type and size. Virus-scanned before storage.
+SQL injection: parameterised queries only. ORM (Prisma/Drizzle) used — no raw string queries.
+XSS: all user input sanitised before storage. Content-Security-Policy header set.
+CSRF: CSRF tokens on all state-changing operations. SameSite=Strict cookies.
+13.3 Rate Limiting
+Authentication endpoints: 5 requests/15 minutes per IP.
+Application submission: 10 applications/hour per student.
+Search API: 100 requests/minute per authenticated user.
+File upload: 20 uploads/hour per user.
+AI match computation: 50 requests/hour per user (scores cached to reduce load).
+13.4 Compliance
+India IT Act 2000 & IT (Amendment) Act 2008 compliance.
+Data localisation: all Indian user data stored on servers within India (AWS ap-south-1 / Mumbai).
+GDPR compliance for EU users (user data deletion, export, consent management).
+Privacy Policy and Terms of Service must be reviewed by legal counsel before launch.
+Age verification: users must confirm they are 18+ during signup.
+Payment processing: PCI-DSS compliance via Razorpay/Stripe (never store card data ourselves).
+14. Release Phases & Roadmap
+Phase 1 — Foundation (Months 1–3) — MVP
+🎯 GOAL:  Functional two-sided marketplace. Students can apply. Companies can hire. Matches work.
+Feature
+Priority
+Est. Effort
+Authentication (email + Google OAuth)
+P0
+1 week
+Student profile builder (all 6 steps)
+P0
+2 weeks
+Browse & search (with filters)
+P0
+1.5 weeks
+Role detail page
+P0
+1 week
+Multi-step application flow
+P0
+1.5 weeks
+Student dashboard (basic)
+P0
+1 week
+Company profile (public)
+P1
+1 week
+Company hiring dashboard (overview + applicants + pipeline)
+P1
+2 weeks
+Post role + AI JD generator
+P1
+1 week
+Basic notifications (in-app)
+P1
+1 week
+Basic messaging (no real-time)
+P1
+1.5 weeks
+Email notifications (apply confirm, status update)
+P1
+0.5 weeks
+AI matching engine (v1 — rule-based scoring)
+P1
+2 weeks
+Landing page + companies page
+P0
+1 week
+Admin panel (basic user + role management)
+P2
+1.5 weeks
+Phase 2 — Trust & Depth (Months 4–6)
+🎯 GOAL:  Verified portfolio, real-time messaging, escrow payments, mentor network launch.
+Portfolio system (upload + verified pieces + endorsements)
+Real-time messaging (WebSocket)
+Notification centre (with email digest + preferences)
+Escrow payment integration (Razorpay)
+Two-sided review system (post-internship)
+AI matching v2 (ML model, 40+ signals)
+Mentor matching and booking
+Learning paths (linked to external courses)
+Blog / career resources (SEO content hub)
+Analytics dashboards for companies (ROI, funnel, conversion)
+Phase 3 — Scale & Expansion (Months 7–12)
+Native mobile apps (React Native — iOS and Android)
+Referral system (invite → reward)
+API access for enterprise customers
+Skills assessment module (in-platform coding/design tests)
+Bulk hiring tools for enterprise (100+ intern programmes)
+International expansion (UAE, Singapore, UK)
+Video interview tool (in-platform, no external tool needed)
+Internship → full-time conversion tracking and alumni network
+15. Acceptance Criteria
+These criteria define "done" for Phase 1 launch. All P0 items must pass before production deployment.
+15.1 Functional Acceptance
+#
+Criterion
+Test Method
+F01
+Student can complete full signup → profile builder → browse → apply flow without error
+End-to-end test
+F02
+Company can post a role and see it appear in browse within 60 seconds
+Integration test
+F03
+AI match score appears on all role cards for authenticated students
+Automated check
+F04
+Application status updates in real-time on student dashboard when company changes it
+E2E test
+F05
+File uploads in portfolio and application flow save correctly and display
+Manual test
+F06
+Password reset flow works end-to-end with valid email
+Automated test
+F07
+Company Kanban pipeline allows drag-and-drop between all 5 columns
+Manual test
+F08
+Save role / save company persist across sessions (not reset on refresh)
+Persistence test
+F09
+Notification badge count is accurate and decrements on read
+Automated test
+F10
+All forms validate required fields and show specific error messages
+Form audit
+15.2 Performance Acceptance
+Homepage Lighthouse score: ≥90 (Performance), ≥90 (Accessibility), ≥90 (Best Practices), ≥85 (SEO)
+Browse page with 50 cards loads in under 2 seconds on a 4G connection
+Role detail page LCP < 2.5 seconds
+No layout shift (CLS < 0.1) on any page
+All pages pass automated WCAG 2.1 AA scan (axe-core)
+15.3 Design Acceptance
+All screens pixel-validated against Figma designs (to be delivered with this document)
+No use of Inter, Roboto, or Arial as display fonts
+All interactive elements have hover and focus states
+Mobile responsiveness verified on: iPhone SE (375px), iPhone 14 Pro (393px), iPad (768px), Desktop (1440px)
+Dark mode design consistent across all components
+Animations do not trigger on prefers-reduced-motion
+15.4 Security Acceptance
+Penetration test: no critical or high vulnerabilities in OWASP Top 10
+All API endpoints return 401 when called without valid token
+SQL injection test: 20 injection vectors attempted, all blocked
+XSS test: 10 XSS payloads in form fields, all sanitised
+Rate limiting: verified working on auth endpoints
+InternConnect Product Requirements Document  ·  Version 1.0  ·  April 2025
+This document is confidential and intended solely for Antigravity Development Team. Do not distribute without written permission from InternConnect.
