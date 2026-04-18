@@ -53,9 +53,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       >
         <div className="h-full flex flex-col">
           {/* Logo / Brand Area */}
-          <div className="h-20 flex items-center px-8 border-b border-edge">
+          <Link href="/" className="h-20 flex items-center px-8 border-b border-edge hover:bg-white/5 transition-colors group">
              <div className="flex items-center gap-3">
-               <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center text-white shadow-glow-accent">
+               <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center text-white shadow-glow-accent group-hover:scale-105 transition-transform">
                  <Shield className="w-5 h-5" />
                </div>
                <div>
@@ -63,7 +63,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   <p className="text-[9px] font-bold text-accent uppercase tracking-[0.2em] -mt-1 font-mono">Control Plane</p>
                </div>
              </div>
-          </div>
+          </Link>
 
           {/* Navigation Links */}
           <nav className="flex-1 py-8 px-4 space-y-1.5 overflow-y-auto">

@@ -8,28 +8,7 @@ import { NetworkGrid } from "@/components/NetworkGrid";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-copy-secondary flex flex-col selection:bg-white selection:text-black">
-      
-      {/* Editorial Navigation */}
-      <header className="sticky top-0 z-50 w-full border-b border-zinc-800/60 bg-background/95 backdrop-blur-md">
-        <div className="container mx-auto max-w-[1240px] px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-2xl tracking-tighter text-white uppercase">InternConnect</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-10 text-[0.8rem] font-bold uppercase tracking-widest text-zinc-500">
-            <Link href="/browse" className="hover:text-white transition-colors">Marketplace</Link>
-            <Link href="/feed" className="hover:text-white transition-colors">Protocol</Link>
-            <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
-            <Link href="/companies" className="hover:text-white transition-colors">For Partners</Link>
-          </nav>
-          <div className="flex items-center gap-6">
-            <Button variant="ghost" size="sm" className="hidden sm:inline-flex">Sign in</Button>
-            <Button variant="primary" size="sm" className="px-6 rounded-sm">Get Started</Button>
-          </div>
-        </div>
-      </header>
-
-      <main className="flex-1">
+      <main>
         
         {/* Architectural Hero */}
         <section className="relative min-h-[calc(100vh-5rem)] px-8 flex flex-col items-center justify-center text-center overflow-hidden">
@@ -252,20 +231,6 @@ export default function Home() {
            </div>
         </section>
       </main>
-
-      <footer className="py-20 px-8 border-t border-zinc-900 bg-background">
-         <div className="container mx-auto max-w-[1240px] flex flex-col md:flex-row justify-between items-center gap-10">
-            <div className="font-display font-bold text-lg text-white uppercase tracking-tighter">InternConnect</div>
-            <div className="flex gap-10 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-               <a href="#" className="hover:text-white transition-colors">Privacy</a>
-               <a href="#" className="hover:text-white transition-colors">Terms</a>
-               <a href="#" className="hover:text-white transition-colors">Careers</a>
-               <a href="#" className="hover:text-white transition-colors">Twitter</a>
-            </div>
-            <div className="text-[10px] text-zinc-600 font-mono">© 2026 INTERNCONNECT PROTOCOL</div>
-         </div>
-      </footer>
-    </div>
   );
 }
 
