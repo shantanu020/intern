@@ -10,12 +10,12 @@ import {
   Users, 
   Briefcase, 
   Banknote, 
-  Settings,
-  Bell,
   Menu,
   X,
   Search,
-  Activity
+  Activity,
+  Bell,
+  Settings
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";

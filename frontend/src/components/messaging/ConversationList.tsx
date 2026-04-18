@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Search, Building, User } from "lucide-react";
+import { Search, Building } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface Thread {
@@ -13,6 +13,7 @@ export interface Thread {
   unread: number;
   avatar: string;
   isSystem?: boolean;
+  role?: string;
 }
 
 interface ConversationListProps {

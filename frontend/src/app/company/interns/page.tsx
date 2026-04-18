@@ -130,7 +130,7 @@ export default function ActiveInternsPage() {
                 </div>
                 
                 <div className="flex items-center gap-2">
-                  <Badge variant="primary" className="bg-accent/10 border-accent/20 text-accent font-medium space-x-1 px-2 py-0.5 pointer-events-none">
+                  <Badge variant="default" className="bg-accent/10 border-accent/20 text-accent font-medium space-x-1 px-2 py-0.5 pointer-events-none">
                     <Clock className="w-3 h-3 inline-block mr-1 -mt-0.5" />
                     Sprint Week {intern.sprintWeek} / {intern.totalWeeks}
                   </Badge>

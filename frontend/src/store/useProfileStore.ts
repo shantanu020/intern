@@ -55,8 +55,8 @@ export interface ProfileState {
   };
 
   // Actions
-  updateField: (field: string, value: any) => void;
-  updateNestedField: (section: 'availability' | 'preferences', field: string, value: any) => void;
+  updateField: (field: string, value: unknown) => void;
+  updateNestedField: (section: 'availability' | 'preferences', field: string, value: unknown) => void;
   addEducation: (edu: Education) => void;
   removeEducation: (id: string) => void;
   addSkill: (skill: Skill) => void;
@@ -88,11 +88,11 @@ export const useProfileStore = create<ProfileState>()(
         stipendExpectation: 0,
       },
 
-      updateField: (field, value) => set({ [field]: value }),
+      updateField: (field, value) => set({ [field as keyof ProfileState]: value }),
       
       updateNestedField: (section, field, value) => set((state) => ({
         [section]: {
-          // @ts-ignore
+          // @ts-expect-error - dynamic key assignment in nested object
           ...state[section],
           [field]: value
         }
@@ -113,7 +113,7 @@ export const useProfileStore = create<ProfileState>()(
       getCompletionPercentage: () => {
         const state = get();
         let filled = 0;
-        let total = 6; // 6 Key indicators from PRD
+        const total = 6; // 6 Key indicators from PRD
 
         if (state.name && state.headline && state.bio && state.location) filled++;
         if (state.education.length > 0) filled++;

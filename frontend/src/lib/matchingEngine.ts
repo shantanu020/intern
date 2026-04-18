@@ -1,4 +1,4 @@
-import { ProfileState, Skill } from "@/store/useProfileStore";
+import { ProfileState } from "@/store/useProfileStore";
 
 export interface Role {
   id: string;
@@ -28,7 +28,7 @@ export function calculateMatchScore(profile: ProfileState, role: Role): MatchRes
   let skillScore = 0;
   let logisticsScore = 0;
   let styleScore = 0;
-  let strengthScore = profile.getCompletionPercentage();
+  const strengthScore = profile.getCompletionPercentage();
 
   // 1. Skill Match (40%)
   if (role.requiredSkills.length > 0) {

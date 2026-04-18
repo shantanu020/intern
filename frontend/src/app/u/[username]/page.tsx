@@ -6,15 +6,18 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
-  Building, 
   MapPin, 
-  Code2, 
-  PenTool, 
+  Zap, 
+  ShieldCheck, 
+  Linkedin, 
+  Github, 
+  Mail, 
+  Code2,
   ExternalLink,
-  CheckCircle2,
+  Building2 as Building,
   Trophy,
-  Star,
-  UserCircle2
+  CheckCircle2,
+  Star
 } from "lucide-react";
 import { useProfileStore } from "@/store/useProfileStore";
 
@@ -121,7 +124,7 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
                    </div>
                    
                    <p className="text-zinc-400 text-lg leading-relaxed italic border-l-2 border-zinc-800 pl-6 py-1">
-                     "Outstanding execution. {userName} overhauled our legacy React onboarding flow, cutting bundle size by 40% and introducing architectural clarity. Shipped ahead of schedule."
+                     &quot;Outstanding execution. {userName} overhauled our legacy React onboarding flow, cutting bundle size by 40% and introducing architectural clarity. Shipped ahead of schedule.&quot;
                    </p>
                    
                    <div className="mt-8 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
