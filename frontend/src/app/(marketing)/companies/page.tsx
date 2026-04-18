@@ -70,8 +70,8 @@ export default function CompaniesLandingPage() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/login?type=company">
-              <Button size="lg" className="px-8 shadow-glow-accent-2 bg-accent-2 hover:bg-accent-2/90">
-                Start Hiring Now <ArrowRight className="ml-2 w-4 h-4" />
+              <Button size="lg" className="px-8 flex items-center group">
+                Start Hiring Now <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Button size="lg" variant="secondary" className="px-8 border-edge">

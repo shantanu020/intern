@@ -122,7 +122,7 @@ export default function BrowsePage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-zinc-400 pt-28 pb-20 selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-background text-zinc-400 pb-20 selection:bg-white selection:text-black">
       <div className="container mx-auto max-w-[1240px] px-8">
         
         {/* Editorial Header */}
@@ -145,7 +145,7 @@ export default function BrowsePage() {
                   placeholder="SEARCH REPO OR STACK..." 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-zinc-900/50 border border-zinc-800 rounded-sm h-12 pl-12 pr-6 text-[10px] uppercase font-bold tracking-widest text-white focus:outline-none focus:border-zinc-500 w-[300px] transition-all"
+                  className="bg-zinc-900/50 border border-zinc-900 rounded-sm h-12 pl-12 pr-6 text-[10px] uppercase font-bold tracking-widest text-white focus:outline-none focus:border-zinc-500 w-[300px] transition-all"
                 />
               </div>
               <Button 
@@ -189,7 +189,7 @@ export default function BrowsePage() {
                 {["Micro-Internship", "Seasonal Sprint", "Full Quarter"].map(type => (
                   <label key={type} className="flex items-center gap-3 cursor-pointer group">
                     <div 
-                      className={`w-4 h-4 rounded-sm border border-zinc-800 flex items-center justify-center transition-colors ${selectedEngagements.includes(type) ? 'bg-white border-white' : 'bg-zinc-950 group-hover:border-zinc-600'}`}
+                      className={`w-4 h-4 rounded-sm border border-zinc-900 flex items-center justify-center transition-colors ${selectedEngagements.includes(type) ? 'bg-white border-white' : 'bg-zinc-950 group-hover:border-zinc-600'}`}
                       onClick={() => toggleEngagement(type)}
                     >
                       {selectedEngagements.includes(type) && <div className="w-1.5 h-1.5 bg-black rounded-sm" />}

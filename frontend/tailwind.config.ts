@@ -16,9 +16,14 @@ const config: Config = {
         },
         accent: {
           DEFAULT: "#ffffff",
+          2: "#d4d4d8", // zinc-300
+          3: "#a1a1aa", // zinc-400
+          light: "#fafafa",
           muted: "#71717a", // Zinc 400
           border: "rgba(255,255,255,0.08)",
         },
+        edge: "rgba(255,255,255,0.08)",
+
         copy: {
           primary: "#fafafa", // Zinc 50
           secondary: "#a1a1aa", // Zinc 400

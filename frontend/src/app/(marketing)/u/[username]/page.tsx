@@ -27,7 +27,7 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
   const completionPct = profile.getCompletionPercentage();
 
   return (
-    <div className="min-h-screen bg-background text-zinc-400 pt-28 pb-24 selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-background text-zinc-400 pb-24 selection:bg-white selection:text-black">
       
       <div className="max-w-[1000px] mx-auto px-8">
         
@@ -35,7 +35,7 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
         <div className="flex flex-col md:flex-row gap-12 items-start justify-between mb-20 border-b border-zinc-900 pb-20">
           
           <div className="flex items-start gap-10">
-            <div className="w-32 h-32 rounded-sm bg-zinc-900 border border-zinc-800 flex items-center justify-center font-display font-bold text-4xl text-white shrink-0 relative overflow-hidden">
+            <div className="w-32 h-32 rounded-sm bg-zinc-950 border border-zinc-900 flex items-center justify-center font-display font-bold text-4xl text-white shrink-0 relative overflow-hidden">
                {userName.substring(0,2).toUpperCase()}
             </div>
             
@@ -43,7 +43,7 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-2 flex items-center gap-3 text-white uppercase tracking-tighter">
                 {userName}
               </h1>
-              <Badge variant="outline" className="mb-6 border-zinc-800 text-zinc-500 font-bold tracking-widest uppercase">
+              <Badge variant="outline" className="mb-6 border-zinc-900 text-zinc-500 font-bold tracking-widest uppercase">
                 internconnect.io/u/{params.username}
               </Badge>
               <p className="text-xl text-zinc-300 mb-6 font-medium max-w-xl">{profile.headline || "InternConnect Candidate"}</p>
@@ -56,8 +56,8 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
           </div>
 
           {/* Strength Metric */}
-          <div className="bg-zinc-950 border border-zinc-800 rounded-sm p-6 flex items-center gap-6 shrink-0 w-full md:w-auto">
-             <div className="w-16 h-16 rounded-full border border-zinc-800 flex items-center justify-center font-bold text-white text-xl bg-zinc-900 shadow-sm transition-all">
+          <div className="bg-zinc-950 border border-zinc-900 rounded-sm p-6 flex items-center gap-6 shrink-0 w-full md:w-auto">
+             <div className="w-16 h-16 rounded-full border border-zinc-900 flex items-center justify-center font-bold text-white text-xl bg-zinc-900 shadow-sm transition-all">
                {completionPct}%
              </div>
              <div>
@@ -97,7 +97,7 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
             <h2 className="text-3xl font-display font-bold text-white uppercase tracking-tighter">Verified Delivery</h2>
           </div>
           
-          <div className="bg-zinc-950 border border-zinc-800 rounded-sm overflow-hidden relative">
+          <div className="bg-zinc-950/20 border border-zinc-900 rounded-sm overflow-hidden relative">
             <div className="absolute top-0 right-0 bg-white text-black text-[9px] font-bold uppercase tracking-[0.2em] px-4 py-1.5">
               Protocol Record 0x42
             </div>
@@ -172,7 +172,7 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
 
            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {profile.endorsements.map(endorsement => (
-                <Card key={endorsement.id} className="bg-zinc-950 border-zinc-900 rounded-sm hover:border-zinc-700 transition-all">
+                <Card key={endorsement.id} className="bg-zinc-950/20 border-zinc-900 rounded-sm hover:border-zinc-700 transition-all">
                   <CardContent className="p-8">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-4">

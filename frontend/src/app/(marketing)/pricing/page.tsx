@@ -104,7 +104,7 @@ export default function PricingPage() {
             )}
           >
             {plan.popular && (
-              <div className="bg-accent text-white text-[10px] font-bold uppercase tracking-widest py-1.5 text-center">
+              <div className="bg-accent text-black text-[10px] font-black uppercase tracking-widest py-1.5 text-center">
                 Most Popular for Startups
               </div>
             )}

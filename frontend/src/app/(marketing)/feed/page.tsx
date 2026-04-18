@@ -65,7 +65,7 @@ const ACTIVITIES = [
 
 export default function GlobalFeedPage() {
   return (
-    <div className="min-h-screen bg-background text-zinc-400 pt-28 pb-24 selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-background text-zinc-400 pb-24 selection:bg-white selection:text-black">
       
       <div className="max-w-[800px] mx-auto px-8">
         
@@ -82,15 +82,15 @@ export default function GlobalFeedPage() {
 
         {/* Global Statistics */}
         <div className="grid grid-cols-3 gap-6 mb-16">
-           <div className="bg-zinc-950/40 border border-zinc-900 p-6 rounded-sm">
+           <div className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-sm">
               <div className="text-2xl font-display font-bold text-white">142</div>
               <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest mt-1">Live Roles</div>
            </div>
-           <div className="bg-zinc-950/40 border border-zinc-900 p-6 rounded-sm">
+           <div className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-sm">
               <div className="text-2xl font-display font-bold text-white">89%</div>
               <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest mt-1">Success Rate</div>
            </div>
-           <div className="bg-zinc-950/40 border border-zinc-900 p-6 rounded-sm">
+           <div className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-sm">
               <div className="text-2xl font-display font-bold text-white">$12.4k</div>
               <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest mt-1">In Escrow</div>
            </div>
