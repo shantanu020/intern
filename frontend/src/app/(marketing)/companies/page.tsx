@@ -186,21 +186,6 @@ export default function CompaniesLandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 border-t border-edge/30 px-6">
-        <div className="container mx-auto max-w-[1160px] flex flex-col md:flex-row justify-between items-center gap-6">
-           <div className="flex items-center gap-2">
-             <Sparkles className="w-5 h-5 text-accent" />
-             <span className="font-display font-bold text-lg tracking-tight">InternConnect</span>
-           </div>
-           <div className="flex gap-8 text-sm text-copy-muted font-medium">
-             <Link href="/" className="hover:text-copy-primary">For Students</Link>
-             <Link href="/browse" className="hover:text-copy-primary">Internships</Link>
-             <Link href="/pricing" className="hover:text-copy-primary font-bold text-accent">Pricing</Link>
-             <Link href="/login" className="hover:text-copy-primary">Sign In</Link>
-           </div>
-        </div>
-      </footer>
 
     </div>
   );
