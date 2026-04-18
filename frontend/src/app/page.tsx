@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Zap, ShieldCheck, Clock, ArrowRight, Sparkles, Building2, UserCircle2 } from "lucide-react";
 import Link from "next/link";
+import { NetworkGrid } from "@/components/NetworkGrid";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           </div>
           <nav className="hidden md:flex items-center gap-10 text-[0.8rem] font-bold uppercase tracking-widest text-zinc-500">
             <Link href="/browse" className="hover:text-white transition-colors">Marketplace</Link>
+            <Link href="/feed" className="hover:text-white transition-colors">Protocol</Link>
             <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
             <Link href="/companies" className="hover:text-white transition-colors">For Partners</Link>
           </nav>
@@ -56,6 +58,13 @@ export default function Home() {
               </Button>
             </Link>
           </div>
+        </section>
+
+        {/* Global Network Matrix (Phase 3 Integration) */}
+        <section className="px-8 mb-20 animate-in fade-in duration-1000 slide-in-from-bottom-5">
+           <div className="container mx-auto max-w-[1240px]">
+              <NetworkGrid />
+           </div>
         </section>
 
         {/* The Network Grid (Logo Cloud) */}

@@ -16,11 +16,14 @@ export interface Skill {
   level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
 }
 
-export interface Project {
+export interface Endorsement {
   id: string;
-  title: string;
-  description: string;
-  link: string;
+  skillName: string;
+  endorserName: string;
+  endorserRole: string;
+  avatar: string;
+  date: string;
+  content?: string;
 }
 
 export interface ProfileState {
@@ -53,6 +56,9 @@ export interface ProfileState {
     companyType: string;
     stipendExpectation: number;
   };
+  
+  // Step 7: Referrals
+  endorsements: Endorsement[];
 
   // Actions
   updateField: (field: string, value: unknown) => void;
@@ -63,6 +69,7 @@ export interface ProfileState {
   removeSkill: (name: string) => void;
   addProject: (project: Project) => void;
   removeProject: (id: string) => void;
+  addEndorsement: (endorsement: Endorsement) => void;
   getCompletionPercentage: () => number;
 }
 
@@ -87,6 +94,17 @@ export const useProfileStore = create<ProfileState>()(
         companyType: '',
         stipendExpectation: 0,
       },
+      endorsements: [
+        {
+          id: "E1",
+          skillName: "React",
+          endorserName: "Sarah K.",
+          endorserRole: "CTO, Draftly HQ",
+          avatar: "SK",
+          date: "2 days ago",
+          content: "Absolute master of component architecture. Shipped a 40% performance gain in one sprint."
+        }
+      ],
 
       updateField: (field, value) => set({ [field as keyof ProfileState]: value }),
       
@@ -107,8 +125,11 @@ export const useProfileStore = create<ProfileState>()(
       }),
       removeSkill: (name) => set((state) => ({ skills: state.skills.filter(s => s.name !== name) })),
       
-      addProject: (proj) => set((state) => ({ projects: [...state.projects, proj] })),
       removeProject: (id) => set((state) => ({ projects: state.projects.filter(p => p.id !== id) })),
+
+      addEndorsement: (endorsement) => set((state) => ({ 
+        endorsements: [...state.endorsements, endorsement] 
+      })),
 
       getCompletionPercentage: () => {
         const state = get();

@@ -143,7 +143,7 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
           
           <div className="grid md:grid-cols-2 gap-8">
             {profile.projects.length > 0 ? profile.projects.map(project => (
-              <Card key={project.id} className="group hover:border-zinc-600 border-zinc-900 bg-zinc-950/20">
+              <Card key={project.id} className="group hover:border-zinc-600 border-zinc-900 bg-zinc-950/20 rounded-sm">
                  <div className="h-48 w-full bg-zinc-900/50 relative border-b border-zinc-900 flex items-center justify-center">
                     <Code2 className="w-12 h-12 text-zinc-800 group-hover:text-zinc-600 transition-colors" />
                  </div>
@@ -161,6 +161,50 @@ export default function StudentPortfolioPage({ params }: { params: { username: s
               </div>
             )}
           </div>
+        </div>
+
+        {/* Talent Referrals: Endorsements */}
+        <div className="mb-24">
+           <div className="flex items-center justify-between mb-10">
+              <h2 className="text-3xl font-display font-bold text-white uppercase tracking-tighter">Social Signal</h2>
+              <Button variant="outline" className="text-[10px] uppercase font-bold tracking-widest border-zinc-800 hover:bg-white/5">Request Endorsement</Button>
+           </div>
+
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {profile.endorsements.map(endorsement => (
+                <Card key={endorsement.id} className="bg-zinc-950 border-zinc-900 rounded-sm hover:border-zinc-700 transition-all">
+                  <CardContent className="p-8">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-xs font-bold text-white">
+                          {endorsement.avatar}
+                        </div>
+                        <div>
+                          <div className="text-sm font-bold text-white uppercase tracking-tight">{endorsement.endorserName}</div>
+                          <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{endorsement.endorserRole}</div>
+                        </div>
+                      </div>
+                      <Badge className="bg-emerald-500/10 text-emerald-500 border-none font-black text-[9px] uppercase tracking-widest px-2 py-1">
+                        Verified
+                      </Badge>
+                    </div>
+
+                    <div className="mb-6">
+                       <Badge variant="secondary" className="bg-zinc-900 text-zinc-400 border-zinc-800 mb-4 px-2 py-1">
+                         Endorsed: {endorsement.skillName}
+                       </Badge>
+                       <p className="text-sm text-zinc-300 leading-relaxed font-medium italic">
+                         &quot;{endorsement.content}&quot;
+                       </p>
+                    </div>
+
+                    <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-[0.3em]">
+                       Authenticated Seal • {endorsement.date}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+           </div>
         </div>
 
       </div>
