@@ -81,10 +81,6 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-background text-copy-primary pb-24 px-6 relative overflow-hidden">
       
-      {/* Bg Decor */}
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-accent/10 blur-[120px] pointer-events-none" />
-      <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-accent-2/10 blur-[150px] pointer-events-none" />
-
       <div className="container mx-auto max-w-[1100px] relative z-10 text-center mb-20">
         <Badge variant="default" className="mb-4 bg-accent/20 text-accent-light border-accent/30">
           Transparent Pricing
