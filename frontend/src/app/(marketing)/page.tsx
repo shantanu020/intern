@@ -47,7 +47,7 @@ export default function Home() {
         </section>
 
         {/* The Network Grid (Logo Cloud) */}
-        <section className="py-20 border-t border-b border-zinc-900 bg-zinc-950/20 px-8">
+        <section className="py-20 bg-zinc-950/20 px-8">
           <div className="container mx-auto max-w-[1240px]">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12 opacity-40 grayscale group hover:opacity-100 transition-opacity duration-700">
                <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-500 mb-4 md:mb-0">Backing Signal:</div>
@@ -100,7 +100,7 @@ export default function Home() {
         </section>
 
         {/* The Process Protocol (Step-by-Step) */}
-        <section className="py-40 px-8 border-t border-zinc-900">
+        <section className="py-40 px-8">
            <div className="container mx-auto max-w-[1240px]">
               <div className="max-w-3xl mb-32">
                  <h2 className="text-4xl md:text-7xl font-display font-bold text-white uppercase tracking-tighter leading-none mb-10">THE OPS <br/>CYCLE.</h2>
@@ -127,7 +127,7 @@ export default function Home() {
         </section>
 
         {/* Interactive Signal Demo Mockup */}
-        <section className="py-20 px-8 border-t border-zinc-900 bg-zinc-950/40">
+        <section className="py-20 px-8 bg-zinc-950/40">
            <div className="container mx-auto max-w-[1240px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                  <div>
@@ -215,7 +215,7 @@ export default function Home() {
         </section>
 
         {/* Closing CTA */}
-        <section className="py-40 px-8 bg-zinc-950 text-white text-center border-t border-zinc-900">
+        <section className="py-40 px-8 bg-zinc-950 text-white text-center">
            <h2 className="text-5xl md:text-8xl font-display font-bold mb-12 tracking-tighter uppercase leading-none text-white">READY TO <br/>SHIP?</h2>
            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <Link href="/browse" className="w-full sm:w-auto">

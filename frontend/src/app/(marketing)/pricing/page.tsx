@@ -147,7 +147,7 @@ export default function PricingPage() {
       </div>
 
       {/* Trust & Stats Section */}
-      <div className="container mx-auto max-w-[1100px] mb-32 py-20 border-y border-edge/30">
+      <div className="container mx-auto max-w-[1100px] mb-32 py-20">
          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
                <div className="text-3xl font-display font-bold text-copy-primary mb-1">2k+</div>

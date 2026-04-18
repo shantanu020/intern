@@ -53,7 +53,7 @@ export default function CompaniesLandingPage() {
       <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-[150px] pointer-events-none" />
 
       {/* Hero Section */}
-      <header className="pb-20 px-6 relative z-10 border-b border-edge/30">
+      <header className="pb-20 px-6 relative z-10">
         <div className="container mx-auto max-w-[1160px] text-center">
           <Badge variant="default" className="mb-6 bg-accent-2/10 text-accent-2 border-accent-2/30">
             <Building2 className="w-3 h-3 mr-2" />
@@ -79,7 +79,7 @@ export default function CompaniesLandingPage() {
             </Button>
           </div>
 
-          <div className="mt-20 pt-10 border-t border-edge/50">
+          <div className="mt-20 pt-10">
              <p className="text-xs font-bold uppercase tracking-[0.2em] text-copy-muted mb-8">Trusted by teams at</p>
              <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-40 grayscale group hover:opacity-70 transition-opacity">
                 {SOCIAL_PROOF.map(brand => (
@@ -112,7 +112,7 @@ export default function CompaniesLandingPage() {
       </section>
 
       {/* Comparison Section */}
-      <section className="py-24 px-6 relative z-10 border-t border-edge/30">
+      <section className="py-24 px-6 relative z-10">
         <div className="container mx-auto max-w-[960px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">The New Standard in Recruiting</h2>
