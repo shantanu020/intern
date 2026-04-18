@@ -59,7 +59,7 @@ export default function CompaniesLandingPage() {
           </Badge>
           
           <h1 className="text-5xl md:text-7xl font-display font-bold max-w-4xl mx-auto text-copy-primary mb-6 leading-[1.05]">
-            Hire your next <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-2 to-accent-3">rockstar intern</span> in minutes, not weeks.
+            Hire your next <span className="text-accent-2">rockstar intern</span> in minutes, not weeks.
           </h1>
           
           <p className="text-xl text-copy-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -138,7 +138,7 @@ export default function CompaniesLandingPage() {
              
              {/* Mock Dashboard Card */}
              <div className="relative group">
-               <div className="absolute -inset-4 bg-gradient-to-r from-accent to-accent-2 opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
+              {/* Removed gradient glow for UI consistency */}
                <Card className="bg-background-secondary border-accent-2/30 relative z-10 overflow-hidden shadow-2xl">
                  <div className="p-4 border-b border-edge bg-white/5 flex items-center justify-between">
                     <div className="flex gap-1.5">
