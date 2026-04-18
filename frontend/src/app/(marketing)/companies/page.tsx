@@ -49,8 +49,6 @@ export default function CompaniesLandingPage() {
     <div className="min-h-screen bg-background relative overflow-hidden flex flex-col">
       
       {/* Background Decor */}
-      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-accent-2/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-[150px] pointer-events-none" />
 
       {/* Hero Section */}
       <header className="pb-20 px-6 relative z-10">

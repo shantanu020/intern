@@ -189,8 +189,7 @@ export default function PricingPage() {
       </div>
 
       {/* Final CTA */}
-      <div className="container mx-auto max-w-[900px] mt-32 bg-gradient-to-br from-accent-2/10 to-accent/10 border border-accent-2/20 rounded-3xl p-12 text-center relative overflow-hidden">
-         <div className="absolute -top-10 -left-10 w-40 h-40 bg-accent/20 blur-[80px] rounded-full" />
+      <div className="container mx-auto max-w-[900px] mt-32 bg-zinc-950/40 border border-zinc-800 rounded-3xl p-12 text-center relative overflow-hidden">
          <h2 className="text-3xl font-display font-bold mb-4 relative z-10">Still have questions?</h2>
          <p className="text-copy-secondary mb-8 max-w-lg mx-auto relative z-10">Our enterprise team is ready to talk about custom hiring needs, API integrations, and volume discounts.</p>
          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">

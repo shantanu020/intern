@@ -47,7 +47,7 @@ export default function Home() {
         </section>
 
         {/* The Network Grid (Logo Cloud) */}
-        <section className="py-20 bg-zinc-950/20 px-8">
+        <section className="py-20 px-8">
           <div className="container mx-auto max-w-[1240px]">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12 opacity-40 grayscale group hover:opacity-100 transition-opacity duration-700">
                <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-500 mb-4 md:mb-0">Backing Signal:</div>
@@ -78,19 +78,19 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-zinc-800 divide-y md:divide-y-0 md:divide-x divide-zinc-800 rounded-sm overflow-hidden">
-              <div className="p-10 bg-zinc-950/20 group hover:bg-zinc-900/40 transition-colors">
+              <div className="p-10 group hover:bg-zinc-900/40 transition-colors">
                 <div className="mb-10 text-white"><Zap strokeWidth={1} size={40} /></div>
                 <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">Signal Matching</h3>
                 <p className="text-sm text-zinc-400 leading-relaxed">Our matching logic bypasses resumes, scoring compatibility across 40+ specific project delivery indicators.</p>
               </div>
 
-              <div className="p-10 bg-zinc-950/20 group hover:bg-zinc-900/40 transition-colors">
+              <div className="p-10 group hover:bg-zinc-900/40 transition-colors">
                 <div className="mb-10 text-white"><Clock strokeWidth={1} size={40} /></div>
                 <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight text-glow">Rapid Delivery</h3>
                 <p className="text-sm text-zinc-400 leading-relaxed">Scoped 2-8 week micro-internships for fast-moving startups. Zero friction, immediate contribution.</p>
               </div>
 
-              <div className="p-10 bg-zinc-950/20 group hover:bg-zinc-900/40 transition-colors">
+              <div className="p-10 group hover:bg-zinc-900/40 transition-colors">
                 <div className="mb-10 text-white"><ShieldCheck strokeWidth={1} size={40} /></div>
                 <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">Verified Trust</h3>
                 <p className="text-sm text-zinc-400 leading-relaxed">Blockchain-recorded endorsements from real managers, proving your ability to ship in high-stakes environments.</p>
@@ -127,7 +127,7 @@ export default function Home() {
         </section>
 
         {/* Interactive Signal Demo Mockup */}
-        <section className="py-20 px-8 bg-zinc-950/40">
+        <section className="py-20 px-8">
            <div className="container mx-auto max-w-[1240px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                  <div>
@@ -215,7 +215,7 @@ export default function Home() {
         </section>
 
         {/* Closing CTA */}
-        <section className="py-40 px-8 bg-zinc-950 text-white text-center">
+        <section className="py-40 px-8 text-white text-center">
            <h2 className="text-5xl md:text-8xl font-display font-bold mb-12 tracking-tighter uppercase leading-none text-white">READY TO <br/>SHIP?</h2>
            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <Link href="/browse" className="w-full sm:w-auto">
