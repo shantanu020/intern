@@ -108,12 +108,12 @@ export const NetworkGrid = () => {
               y1={`${sourceNode.y}%`}
               x2={`${targetNode.x}%`}
               y2={`${targetNode.y}%`}
-              stroke={isActive ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.05)"}
-              strokeWidth={isActive ? 1.5 : 1}
+              stroke={isActive ? "rgba(255,255,255,0.8)" : "rgba(255,255,255,0.15)"}
+              strokeWidth={isActive ? 2 : 1}
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ 
                 pathLength: 1, 
-                opacity: isFaded ? 0.02 : 1,
+                opacity: isFaded ? 0.05 : 1,
               }}
               transition={{ duration: 1, delay: sourceNode.seed }}
             />
@@ -133,15 +133,15 @@ export const NetworkGrid = () => {
               key={node.id}
               className={cn(
                 "absolute -translate-x-1/2 -translate-y-1/2 rounded-full cursor-crosshair transition-colors duration-300",
-                node.type === "company" ? "w-2.5 h-2.5" : "w-1.5 h-1.5"
+                node.type === "company" ? "w-3 h-3" : "w-1.5 h-1.5"
               )}
               style={{ left: `${node.x}%`, top: `${node.y}%` }}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ 
-                opacity: isFaded ? 0.1 : (isConnected ? 1 : 0.4), 
-                scale: isHovered ? 2 : (isConnected ? 1.5 : 1),
-                backgroundColor: isConnected || node.type === "company" ? "#ffffff" : "#52525b",
-                boxShadow: isConnected || (node.type === "company" && hoveredNode === null) ? "0 0 10px rgba(255,255,255,0.3)" : "none",
+                opacity: isFaded ? 0.2 : (isConnected ? 1 : 0.7), 
+                scale: isHovered ? 2.5 : (isConnected ? 1.5 : 1),
+                backgroundColor: isConnected || node.type === "company" ? "#ffffff" : "#a1a1aa",
+                boxShadow: isConnected || (node.type === "company" && hoveredNode === null) ? "0 0 20px rgba(255,255,255,0.5)" : "none",
                 // Subtle ambient drift
                 x: [0, (node.seed - 0.5) * 6, 0],
                 y: [0, (node.seed - 0.5) * 6, 0],
