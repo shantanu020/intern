@@ -79,7 +79,7 @@ const FAQS = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-background text-copy-primary pt-32 pb-24 px-6 relative overflow-hidden">
+    <div className="min-h-screen bg-background text-copy-primary pb-24 px-6 relative overflow-hidden">
       
       {/* Bg Decor */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-accent/10 blur-[120px] pointer-events-none" />

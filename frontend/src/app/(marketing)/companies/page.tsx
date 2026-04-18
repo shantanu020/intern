@@ -53,7 +53,7 @@ export default function CompaniesLandingPage() {
       <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-[150px] pointer-events-none" />
 
       {/* Hero Section */}
-      <header className="pt-32 pb-20 px-6 relative z-10 border-b border-edge/30">
+      <header className="pb-20 px-6 relative z-10 border-b border-edge/30">
         <div className="container mx-auto max-w-[1160px] text-center">
           <Badge variant="default" className="mb-6 bg-accent-2/10 text-accent-2 border-accent-2/30">
             <Building2 className="w-3 h-3 mr-2" />
